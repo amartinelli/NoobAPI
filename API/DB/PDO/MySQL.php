@@ -13,22 +13,24 @@ use Luracast\Restler\RestException;
 class DB_PDO_MySQL
 {
     private $db;
+    private $tbname;
 
-    function __construct()
+    function __construct($tbname = '')
     {
+        $this->tbname = $tbname;
         try {
             //Make sure you are using UTF-8
             $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
 
             //Update the dbname username and password to suit your server
             $this->db = new PDO(
-                'mysql:host=localhost;dbname=data_pdo_mysql',
-                'username',
-                'password',
-                $options
-            );
+                    'mysql:host=localhost;dbname=SyCONHOMOLOGA',
+                    'root',
+                    'root',
+                    $options
+                    );
             $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
-                PDO::FETCH_ASSOC);
+                    PDO::FETCH_ASSOC);
 
             //If you are using older version of PHP and having issues with Unicode
             //uncomment the following line
@@ -37,13 +39,45 @@ class DB_PDO_MySQL
         } catch (PDOException $e) {
             throw new RestException(501, 'MySQL: ' . $e->getMessage());
         }
+    } 
+ 
+    function getAllTables($installTableOnFailure = FALSE)
+    {
+        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try {
+            $stmt = $this->db->query('SHOW TABLES');
+            return $stmt->fetchAll();
+        } catch (PDOException $e) {
+            if (!$installTableOnFailure && $e->getCode() == '42S02') {
+                //SQLSTATE[42S02]: Base table or view not found: 1146 Table 'authors' doesn't exist
+                $this->install();
+                return $this->getAll(TRUE);
+            }
+            throw new RestException(501, 'MySQL: ' . $e->getMessage());
+        }
+    }
+
+    function getAllColumns($tbname, $installTableOnFailure = FALSE)
+    {
+        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try {
+            $stmt = $this->db->query('SHOW COLUMNS FROM '.$tbname);
+            return $stmt->fetchAll();
+        } catch (PDOException $e) {
+            if (!$installTableOnFailure && $e->getCode() == '42S02') {
+                //SQLSTATE[42S02]: Base table or view not found: 1146 Table 'authors' doesn't exist
+                $this->install();
+                return $this->getAll(TRUE);
+            }
+            throw new RestException(501, 'MySQL: ' . $e->getMessage());
+        }
     }
 
     function get($id, $installTableOnFailure = FALSE)
     {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try {
-            $sql = $this->db->prepare('SELECT * FROM authors WHERE id = :id');
+            $sql = $this->db->prepare('SELECT * FROM '.$this->tbname.' WHERE '.$this->tbname.'_ID = :id');
             $sql->execute(array(':id' => $id));
             return $this->id2int($sql->fetch());
         } catch (PDOException $e) {
@@ -60,7 +94,7 @@ class DB_PDO_MySQL
     {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         try {
-            $stmt = $this->db->query('SELECT * FROM authors');
+            $stmt = $this->db->query('SELECT * FROM '.$this->tbname);
             return $this->id2int($stmt->fetchAll());
         } catch (PDOException $e) {
             if (!$installTableOnFailure && $e->getCode() == '42S02') {
@@ -74,16 +108,40 @@ class DB_PDO_MySQL
 
     function insert($rec)
     {
-        $sql = $this->db->prepare("INSERT INTO authors (name, email) VALUES (:name, :email)");
-        if (!$sql->execute(array(':name' => $rec['name'], ':email' => $rec['email'])))
+        $fieldSelect = '';
+        $fieldLabel = '';
+        $fieldArray = array();
+        $numItems = count($rec);
+        $i = 0;
+        foreach($rec as $key=>$value) {
+            $i++;
+            $fieldArray[':'.$key]    = $value; 
+            $fieldSelect    .= $key; 
+            $fieldLabel     .= ":".$key; 
+            $fieldSelect    .= ($i === $numItems) ? '' : ', '; 
+            $fieldLabel     .= ($i === $numItems) ? '' : ', '; 
+        }   
+
+        $sql = $this->db->prepare("INSERT INTO ".$this->tbname." (".$fieldSelect.") VALUES (".$fieldLabel.")");
+        if (!$sql->execute($fieldArray))
             return FALSE;
         return $this->get($this->db->lastInsertId());
     }
 
     function update($id, $rec)
     {
-        $sql = $this->db->prepare("UPDATE authors SET name = :name, email = :email WHERE id = :id");
-        if (!$sql->execute(array(':id' => $id, ':name' => $rec['name'], ':email' => $rec['email'])))
+        $fieldLabel = '';
+        $fieldArray = array(':id' => $id);
+        $numItems = count($rec);
+        $i = 0;
+        foreach($rec as $key=>$value) {
+            $i++;
+            $fieldArray[':'.$key]    = $value; 
+            $fieldLabel     .= $key." = :".$key; 
+            $fieldLabel     .= ($i === $numItems) ? '' : ', '; 
+        } 
+        $sql = $this->db->prepare("UPDATE ".$this->tbname." SET ".$fieldLabel." WHERE ".$this->tbname."_ID = :id");
+        if (!$sql->execute($fieldArray))
             return FALSE;
         return $this->get($id);
     }
@@ -91,19 +149,20 @@ class DB_PDO_MySQL
     function delete($id)
     {
         $r = $this->get($id);
-        if (!$r || !$this->db->prepare('DELETE FROM authors WHERE id = ?')->execute(array($id)))
+        if (!$r || !$this->db->prepare('DELETE FROM '.$this->tbname.' WHERE '.$this->tbname.'_ID = ?')->execute(array($id)))
             return FALSE;
         return $r;
     }
 
     private function id2int($r)
     {
+        $tbname = $this->tbname;
         if (is_array($r)) {
-            if (isset($r['id'])) {
-                $r['id'] = intval($r['id']);
+            if (isset($r[$tbname.'_ID'])) {
+                $r[$tbname.'_ID'] = intval($r[$tbname.'_ID']);
             } else {
                 foreach ($r as &$r0) {
-                    $r0['id'] = intval($r0['id']);
+                    $r0[$tbname.'_ID'] = intval($r0[$tbname.'_ID']);
                 }
             }
         }
@@ -112,17 +171,19 @@ class DB_PDO_MySQL
 
     private function install()
     {
-        $this->db->exec(
-            "CREATE TABLE authors (
-                id INT AUTO_INCREMENT PRIMARY KEY ,
-                name TEXT NOT NULL ,
-                email TEXT NOT NULL
-            ) DEFAULT CHARSET=utf8;"
-        );
-        $this->db->exec(
-            "INSERT INTO authors (name, email) VALUES ('Jac  Wright', 'jacwright@gmail.com');
-             INSERT INTO authors (name, email) VALUES ('Arul Kumaran', 'arul@luracast.com');"
-        );
+        /*
+           $this->db->exec(
+           "CREATE TABLE authors (
+           id INT AUTO_INCREMENT PRIMARY KEY ,
+           name TEXT NOT NULL ,
+           email TEXT NOT NULL
+           ) DEFAULT CHARSET=utf8;"
+           );
+           $this->db->exec(
+           "INSERT INTO authors (name, email) VALUES ('Jac  Wright', 'jacwright@gmail.com');
+           INSERT INTO authors (name, email) VALUES ('Arul Kumaran', 'arul@luracast.com');"
+           );
+         */
     }
 }
 

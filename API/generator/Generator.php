@@ -1,10 +1,10 @@
 <?php
-namespace improved;
+namespace generator;
 use Luracast\Restler\RestException;
 use DB_PDO_MySQL;
 //use DB_Session;
 
-class Authors
+class Generator
 {
     public $dp;
 
@@ -15,7 +15,27 @@ class Authors
 
     function index()
     {
-        return $this->dp->getAll();
+        $GN = new Constructor();
+        $string = '';
+
+        foreach($this->dp->getAllTables() as $row){
+            foreach($row as $value){ 
+            $rows[] = $value;
+            $string .= '$r->addAPIClass(\'noob\\sycon\\'.$value.'\');';
+            } 
+        }
+
+        foreach($rows as $myRow) {
+            $resultTable = $this->dp->getAllColumns($myRow);
+            foreach($resultTable as $rowChild){
+                $type = explode("(",$rowChild['Type']);
+                $type = ($type[0] == 'datetime') ? 'date' : $type[0];
+                $type = ($type == 'varchar') ? 'string' : $type;
+                $arr[$myRow][] = array( 'Type' => $type, 'Field' => $rowChild['Field']);
+            }
+        }
+
+        if($GN->generate($arr)) return $string;
     }
 
     /**
@@ -40,7 +60,7 @@ class Authors
      * @return mixed
      */
     function post($name, $email)
-  {
+    {
         return $this->dp->insert(compact('name', 'email'));
     }
 
