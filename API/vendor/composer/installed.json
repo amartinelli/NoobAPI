@@ -248,13 +248,13 @@
         "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/EventDispatcher.git",
-            "reference": "e79162fa079bb559ddad17c58cf8b7ecbaffd9b6"
+            "url": "https://github.com/symfony/event-dispatcher.git",
+            "reference": "1834bd8ece4da49a4135264044b9ac31fdebdc72"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/e79162fa079bb559ddad17c58cf8b7ecbaffd9b6",
-            "reference": "e79162fa079bb559ddad17c58cf8b7ecbaffd9b6",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/1834bd8ece4da49a4135264044b9ac31fdebdc72",
+            "reference": "1834bd8ece4da49a4135264044b9ac31fdebdc72",
             "shasum": ""
         },
         "require": {
@@ -272,7 +272,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2015-09-14 06:10:06",
+        "time": "2015-09-29 12:32:55",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -451,13 +451,13 @@
         "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/Yaml.git",
-            "reference": "d196cb1ac36901bde7d7fbed74ee31fdb85fd119"
+            "url": "https://github.com/symfony/yaml.git",
+            "reference": "36ddab7971364b20229155cd972631a2257d7dac"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Yaml/zipball/d196cb1ac36901bde7d7fbed74ee31fdb85fd119",
-            "reference": "d196cb1ac36901bde7d7fbed74ee31fdb85fd119",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/36ddab7971364b20229155cd972631a2257d7dac",
+            "reference": "36ddab7971364b20229155cd972631a2257d7dac",
             "shasum": ""
         },
         "require": {
@@ -466,7 +466,7 @@
         "require-dev": {
             "symfony/phpunit-bridge": "~2.7|~3.0.0"
         },
-        "time": "2015-09-14 14:15:17",
+        "time": "2015-10-02 12:38:01",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -502,13 +502,13 @@
         "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/Translation.git",
-            "reference": "80fa362cea6a3da2fcd68bb7e4f67de19fd61004"
+            "url": "https://github.com/symfony/translation.git",
+            "reference": "bffe39a5fa506ab48fe32706b8d57c928b07a6f5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Translation/zipball/80fa362cea6a3da2fcd68bb7e4f67de19fd61004",
-            "reference": "80fa362cea6a3da2fcd68bb7e4f67de19fd61004",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/bffe39a5fa506ab48fe32706b8d57c928b07a6f5",
+            "reference": "bffe39a5fa506ab48fe32706b8d57c928b07a6f5",
             "shasum": ""
         },
         "require": {
@@ -519,7 +519,7 @@
         },
         "require-dev": {
             "psr/log": "~1.0",
-            "symfony/config": "~2.7",
+            "symfony/config": "~2.8",
             "symfony/intl": "~2.4|~3.0.0",
             "symfony/phpunit-bridge": "~2.7|~3.0.0",
             "symfony/yaml": "~2.2|~3.0.0"
@@ -529,7 +529,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2015-09-18 20:35:55",
+        "time": "2015-09-29 12:32:55",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -565,13 +565,13 @@
         "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/DependencyInjection.git",
-            "reference": "adf92b97a0574be5a803262f7ab8136e1e7340b6"
+            "url": "https://github.com/symfony/dependency-injection.git",
+            "reference": "2d418eb39f0e5f05aa5ba936aab457df87b273d3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/DependencyInjection/zipball/adf92b97a0574be5a803262f7ab8136e1e7340b6",
-            "reference": "adf92b97a0574be5a803262f7ab8136e1e7340b6",
+            "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/2d418eb39f0e5f05aa5ba936aab457df87b273d3",
+            "reference": "2d418eb39f0e5f05aa5ba936aab457df87b273d3",
             "shasum": ""
         },
         "require": {
@@ -591,7 +591,7 @@
             "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
             "symfony/yaml": ""
         },
-        "time": "2015-09-18 07:20:16",
+        "time": "2015-10-03 06:39:08",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -627,13 +627,13 @@
         "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/Filesystem.git",
-            "reference": "287fc0b1dcb11ff729eeefc20441c08eaf628f29"
+            "url": "https://github.com/symfony/filesystem.git",
+            "reference": "bfc0d94f2458c4d0de9ae8ab7a6b42d5687c663e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Filesystem/zipball/287fc0b1dcb11ff729eeefc20441c08eaf628f29",
-            "reference": "287fc0b1dcb11ff729eeefc20441c08eaf628f29",
+            "url": "https://api.github.com/repos/symfony/filesystem/zipball/bfc0d94f2458c4d0de9ae8ab7a6b42d5687c663e",
+            "reference": "bfc0d94f2458c4d0de9ae8ab7a6b42d5687c663e",
             "shasum": ""
         },
         "require": {
@@ -642,7 +642,7 @@
         "require-dev": {
             "symfony/phpunit-bridge": "~2.7|~3.0.0"
         },
-        "time": "2015-09-09 18:05:45",
+        "time": "2015-09-29 12:32:55",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -673,70 +673,18 @@
         "homepage": "https://symfony.com"
     },
     {
-        "name": "symfony/config",
-        "version": "2.8.x-dev",
-        "version_normalized": "2.8.9999999.9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Config.git",
-            "reference": "a1e8e51ed2d591bb1827d04fd1d320cd4f03e5fe"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Config/zipball/a1e8e51ed2d591bb1827d04fd1d320cd4f03e5fe",
-            "reference": "a1e8e51ed2d591bb1827d04fd1d320cd4f03e5fe",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9",
-            "symfony/filesystem": "~2.3|~3.0.0"
-        },
-        "require-dev": {
-            "symfony/phpunit-bridge": "~2.7|~3.0.0"
-        },
-        "time": "2015-09-14 14:15:17",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.8-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Config\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Config Component",
-        "homepage": "https://symfony.com"
-    },
-    {
         "name": "symfony/console",
         "version": "2.8.x-dev",
         "version_normalized": "2.8.9999999.9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/Console.git",
-            "reference": "51e2f9d81003e5c60097282bb2fbb3676fd88893"
+            "url": "https://github.com/symfony/console.git",
+            "reference": "78c6b2d546adde52807676059cce65c0cadeb430"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Console/zipball/51e2f9d81003e5c60097282bb2fbb3676fd88893",
-            "reference": "51e2f9d81003e5c60097282bb2fbb3676fd88893",
+            "url": "https://api.github.com/repos/symfony/console/zipball/78c6b2d546adde52807676059cce65c0cadeb430",
+            "reference": "78c6b2d546adde52807676059cce65c0cadeb430",
             "shasum": ""
         },
         "require": {
@@ -753,7 +701,7 @@
             "symfony/event-dispatcher": "",
             "symfony/process": ""
         },
-        "time": "2015-09-19 20:42:44",
+        "time": "2015-10-02 14:08:20",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1139,5 +1087,57 @@
                 "email": "taylorotwell@gmail.com"
             }
         ]
+    },
+    {
+        "name": "symfony/config",
+        "version": "2.8.x-dev",
+        "version_normalized": "2.8.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/config.git",
+            "reference": "91f483a2de7b6c0552f42aa1d4fd1c066bc7ccba"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/config/zipball/91f483a2de7b6c0552f42aa1d4fd1c066bc7ccba",
+            "reference": "91f483a2de7b6c0552f42aa1d4fd1c066bc7ccba",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9",
+            "symfony/filesystem": "~2.3|~3.0.0"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "~2.7|~3.0.0"
+        },
+        "time": "2015-09-27 10:15:37",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Config\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Config Component",
+        "homepage": "https://symfony.com"
     }
 ]
