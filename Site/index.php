@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>SyCON | Welcome</title>
+	<title>SyCON | ERP</title>
+
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 
 	<meta name="description" content="Design - is a Premium HTML5 Responsive Templeate by Graygrids Team.">
 
@@ -67,7 +69,7 @@
 						<!-- logo here -->
 						<a href="/Site" class="navbar-brand">
 							<h1 class="logo">
-								<i class="fa fa-bars fa-lg"></i>
+								<i class="fa fa-flash fa-lg"></i>
 								Sy<strong>CON</strong>
 							</h1>
 						</a>
@@ -100,7 +102,14 @@
 				<div class="container">
 					<div class="row">
 						<div class="main-text">
-							<h1 class="wow fadeInUp"><span class="span-logo">Sy<strong>CON</strong></span> - Um ERP diferente</h1>
+							<h1 class="wow fadeInUp">
+								<span class="span-logo">
+									<i class="fa fa-flash fa-lg"></i>
+									Sy<strong>CON</strong>
+								</span>
+								<br>
+								<small> - Um ERP diferente - </small>
+							</h1>
 							<h2 class="wow fadeInUp" data-wow-delay=".7s">Solução comercial de baixo custo, utilizando tecnologia de ponta.</h2>
 							<div class="wow fadeInUp" data-wow-delay="1.5s"><a onclick="smoothScr.anim('services')" class="btn btn-border btn-lg"><i class="fa fa-spinner fa-spin"></i> Explore</a></div>
 						</div>
