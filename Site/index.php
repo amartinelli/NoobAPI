@@ -67,7 +67,7 @@
 							<i class="fa fa-bars fa-lg"></i>
 						</button>
 						<!-- logo here -->
-						<a href="/Site" class="navbar-brand">
+						<a href="/" class="navbar-brand">
 							<h1 class="logo">
 								<i class="fa fa-flash fa-lg"></i>
 								Sy<strong>CON</strong>
