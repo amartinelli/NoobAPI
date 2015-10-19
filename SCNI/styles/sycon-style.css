@@ -1,0 +1,67 @@
+.login-page{
+	/*
+	background-image: url('../images/bar-min.jpg');
+	background-size: 100% auto;
+	*/
+}
+
+.border{
+	border: 1px #FF0000 solid;
+	border-style: dotted;
+}
+
+.login-box{
+    margin-top: 7%;
+    border: 1px #E74C3C solid;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 25px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	color: #e74c3c;	
+}
+
+.btn-sycon{
+	border: 1px rgba(231, 76, 60, 0.8) solid;
+    color: rgba(231, 76, 60, 0.8);
+}
+
+.btn-sycon:hover{
+	border: 2px rgba(231, 76, 60, 1) solid;
+    color: rgba(231, 76, 60, 1);
+}
+
+.main{
+	background-color: #0C0C0C;
+}
+
+.sidebar{
+	background-image: url('../images/bar-min.jpg');
+	background-position: center center;
+	background-size: auto 100%;
+}
+
+.nav-sidebar{
+	background-color: rgba(0,0,0,0.8);
+}
+
+.dashboard-page .nav-sidebar>.active>a, .dashboard-page .nav-sidebar>.active>a:hover, .dashboard-page .nav-sidebar>.active>a:focus {
+    color: #fff;
+    background-color: rgba(231, 76, 60, 0.8);
+}
+
+.dashboard-page .nav-sidebar>li>a:hover, .dashboard-page .nav-sidebar>li>a:focus {
+    color: #fff;
+    background-color: rgba(231, 76, 60, 0.4);
+}
+
+.btn-primary{
+	border-color: #e74c3c;
+	box-shadow: 0 0 0 2px #e74c3c inset!important;
+    color: #e74c3c!important;
+}
