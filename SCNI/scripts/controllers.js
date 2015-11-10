@@ -1,6 +1,6 @@
 angular.module('yapp')
 
-.controller("LoginCtrl", ["$scope", "$location", function(s, t) {
+.controller("LoginCtrl", ["$scope", "$location", function(s, l) {
  
 	$(function () {
 		$('.ng-scope').css('backgroundImage','url(images/bar-min.jpg)');
@@ -10,7 +10,8 @@ angular.module('yapp')
  		
     	
     s.submit = function() {
-        return t.path("/dashboard"), !1
+       console.log(s.login,s.pass);
+       // return t.path("/dashboard");
     }
 
 }])
