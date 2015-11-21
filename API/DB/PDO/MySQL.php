@@ -90,6 +90,23 @@ class DB_PDO_MySQL
         }
     }
 
+    function login($email, $password, $installTableOnFailure = FALSE)
+    {
+        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try {
+            $sql = $this->db->prepare('SELECT * FROM '.$this->tbname.' WHERE Email = :Email AND Password = :Password');
+            $sql->execute(array(':Email' => $email, ':Password' => $password));
+            return $this->id2int($sql->fetch());
+        } catch (PDOException $e) {
+            if (!$installTableOnFailure && $e->getCode() == '42S02') {
+                //SQLSTATE[42S02]: Base table or view not found: 1146 Table 'authors' doesn't exist
+                $this->install();
+                return $this->get($id, TRUE);
+            }
+            throw new RestException(501, 'MySQL: ' . $e->getMessage());
+        }
+    }
+
     function getAll($installTableOnFailure = FALSE)
     {
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

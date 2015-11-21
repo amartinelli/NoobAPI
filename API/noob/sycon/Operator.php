@@ -33,6 +33,23 @@
             }
 
             /**
+             * @access private
+             *
+             * @param string $Email {@from body}
+             * @param string $Password {@from body}
+             *
+             * @return array
+             */
+            function postLogin($Email, $Password)
+            {
+                $Password = hash('sha256', $Password);
+                $r = $this->dp->login($Email,$Password);
+                if ($r === false)
+                    throw new RestException(404);
+                return $r;
+            }
+
+            /**
              * @status 201
              *
              *

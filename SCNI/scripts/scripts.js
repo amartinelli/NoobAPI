@@ -1,5 +1,5 @@
 "use strict";
-angular.module("yapp", ["ui.router", "ngAnimate"]).config(["$stateProvider", "$urlRouterProvider", function(r, t) {
+angular.module("yapp", ["ui.router", "ngAnimate", "ngCookies"]).config(["$stateProvider", "$urlRouterProvider", function(r, t) {
     t.when("/dashboard", "/dashboard/overview"), t.otherwise("/login"), r.state("base", {
         "abstract": !0,
         url: "",

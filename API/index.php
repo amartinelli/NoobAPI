@@ -35,6 +35,7 @@ $r = new Restler();
 // comment the line above and uncomment the line below for production mode
 // $r = new Restler(true);
 $r->addAPIClass('improved\\Authors');
+$r->addAPIClass('noob\\sycon\\Authentication');
 $r->addAPIClass('noob\\sycon\\Bill');
 $r->addAPIClass('noob\\sycon\\Cashier');
 $r->addAPIClass('noob\\sycon\\Category');
