@@ -24,9 +24,9 @@ class DB_PDO_MySQL
 
             //Update the dbname username and password to suit your server
             $this->db = new PDO(
-                    'mysql:host=localhost;dbname=SyCONHOMOLOGA',
-                    'root',
-                    'root',
+                    'mysql:host=localhost;dbname=SyCON',
+                    'vgomes',
+                    '123456',
                     $options
                     );
             $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
