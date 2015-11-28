@@ -6,7 +6,7 @@
 
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-	<meta name="description" content="Design - is a Premium HTML5 Responsive Templeate by Graygrids Team.">
+	<meta name="description" content="SyCON - Um ERP |DIFERENTE| - ">
 
 	<meta name="keywords" content="Startup HTML template, Bootstrap Agency theme, html template, charity template, premium html template, one page template">
 
@@ -131,7 +131,11 @@
 								<i class="fa fa-leaf"></i>
 								</div>
 								<h2>Fácil customização</h2>
-								<p>Nossa ferramenta possui uma larga possibilidade para ser customizada com apenas alguns cliques, você pode deixar ela a cara de sua empresa e se precisar de ajuda, possuímos deisgners que podem lhe auxiliar nas consfigurações</p>
+								<p>
+									Nossa ferramenta possui um painel de configurações, para que você possa costumizar sua loja, a sua maneira.
+									<br />
+									E caso precise de uma mão, nossos Designers, ficarão entusiasmados em ajudar você.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -142,7 +146,9 @@
 								<i class="fa fa-heart"></i>
 								</div>
 								<h2>Simples & Inovador</h2>
-								<p>No mundo atual tempo para treinamento e capacitação de coolaboradores, se torna um pesadelo devido ao grande número de turn-over no mercado. Pensando nisso a nossa plataforma foi projetada de maneira pré-cognitiva</p>
+								<p>
+									No mundo atual, treinar e capcitar coolaboradores é um luxo, pois o tempo vale Ouro, e foi pensando nisso que desenvolvemos um plataforma, utilizando técnicas de UX, para tornar a sua utilização, pré-cognitiva.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -152,8 +158,10 @@
 								<div class="icon-wrapper">
 								<i class="fa fa-cloud"></i>
 								</div>
-								<h2>R2G</h2>
-								<p>Nossa plataforma utiliza tecnologia  em CLOUD, para que você possa estar por dentro do que rola na sua empresa de qualquer lugar do mundo e em tempo real.</p>
+								<h2>Cloud</h2>
+								<p>
+									Nós estamos na CLOUD, sabemos que você não pode ficar 1 segundo sem informações, e para solucionar isso, mantemos as informações de seu ERP disponíveis em tempo real 24/7.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -164,7 +172,9 @@
 								<i class="fa fa-mobile-phone"></i>
 								</div>
 								<h2>Layout Responsive</h2>
-								<p>O mundo evoluiu e hoje em dia todos utilizamos celulares, tablest e outros gadgets, por isso nossa plataforma se adapta ao dispositivo que você escolher acessar</p>
+								<p>
+									O mundo evoluiu, as pessoas hoje estão conectadas o tempo todo, de diferentes dispositivos, e nossa plataforma se adapta ao dispositivo que você escolher.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -411,8 +421,8 @@
 									<i class="fa fa-laptop"></i>
 								</span>
 								<div class="content">
-									<h4>Responsive Layout</h4>
-									<p>Nossa plataforma pode ser acessada de qualquer aparelho e em qualquer lugar do mundo.</p>
+									<h4>Responsive Layout on Cloud</h4>
+									<p>Nossa plataforma pode ser acessada de qualquer dispositivo, de qualquer lugar do mundo.</p>
 								</div>
 							</div>
 							<br>
@@ -432,7 +442,7 @@
 								</span>
 								<div class="content">
 									<h4>Cross Browser</h4>
-									<p>Nossos sistema esta homologado para que a experiência de utilizaçã seja a mesma independente do navegador que você esteja.</p>
+									<p>Nossos sistema esta homologado, para que sua experiência na utilização, seja a mesma, independente do navegador que você esteja.</p>
 								</div>
 							</div>
 						</div>
@@ -450,7 +460,7 @@
 								</span>
 								<div class="content">
 									<h4>Nota Fiscal</h4>
-									<p>Como o governo anda exigindo novos metodos para geração de notas fiscais, não fique preocupado nós fazemos isso por você também.</p>
+									<p>Como o governo anda exigindo novos metodos para geração de notas fiscais, não fique preocupado nós fazemos isso por você também, matendo seu sistem, sempre atualizado.</p>
 								</div>
 							</div>
 							<br>
@@ -969,13 +979,16 @@
 							<div class="contact-item">
 								<a href="#"><i class="fa fa-phone"></i></a>
 								<h5>Atendimento ao Consumidor</h5>
-								<h4>+1 5587 - 546 - 022</h4>
+								<h4>+55 13 3591 3489</h4>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
 							<div class="contact-item">
 								<a href="#"><i class="fa fa-user"></i></a>
-								<h5>Suporte</h5>
+								<h5>SAC</h5>
+								<h4>sac@syconline.com.br</h4>
+								<hr>
+								<h5>Suporte Técnico</h5>
 								<h4>support@syconline.com.br</h4>
 							</div>
 						</div>
