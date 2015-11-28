@@ -3,10 +3,10 @@ namespace noob\sycon;
 use Luracast\Restler\RestException;
 use DB_PDO_MySQL;
 
-class History
+class CommandProduct
 {
     public $dp;
-    public $tbname = 'History';
+    public $tbname = 'Command_Product';
     private $ClientD = 1;
 
     function __construct()
@@ -31,50 +31,67 @@ class History
      *
      * @url GET /{ClientID}/{id}
      *
-     * @param int id
      * @param int ClientID
+     * @param int id
      *
      * @return array
      */
     function get($ClientID, $id)
     {
-        $r = $this->dp->get($ClientID, $id);
-        if ($r === false)
-            throw new RestException(404);
-        return $r;
+        return $this->dp->getAllCommandProducts($ClientID, $id);
     }
+
+    /**
+     *
+     * @url GET /Command/{ClientID}/{id}
+     *
+     * @param int ClientID
+     * @param int id
+     *
+     * @return array
+     */
+    function commandData($ClientID, $id)
+    {
+        return $this->dp->getCommandData($ClientID, $id);
+    }
+
+    
 
     /**
      * @status 201
      *
      *
          * @param int $Client_ID  {@from body}
+         * @param int $Commands_ID  {@from body}
          * @param int $Sale_ID  {@from body}
-         * @param int $Customer_ID  {@from body}
-         * @param longtext $Register_Json  {@from body}
-         * @param string $Total  {@from body}             
+         * @param int $Product_ID  {@from body}
+         * @param date $Date  {@from body}
+         * @param string $Quantity  {@from body}
+         * @param string $Flag  {@from body}             
      *
      * @return mixed
      */
-    function post($Client_ID, $Sale_ID, $Customer_ID, $Register_Json, $Total)
+    function post($Client_ID, $Commands_ID, $Sale_ID, $Product_ID, $Date, $Quantity, $Flag)
     {
-        return $this->dp->insert($Client_ID, compact('Client_ID', 'Sale_ID', 'Customer_ID', 'Register_Json', 'Total'));
+        return $this->dp->insert($Client_ID, compact('Client_ID', 'Commands_ID', 'Sale_ID', 'Product_ID', 'Date', 'Quantity', 'Flag'));
     }
 
     /**
      * @param int    $id
      *
          * @param int $Client_ID  {@from body}
+         * @param int $Commands_ID  {@from body}
          * @param int $Sale_ID  {@from body}
-         * @param int $Customer_ID  {@from body}
-         * @param longtext $Register_Json  {@from body}
-         * @param string $Total  {@from body}
+         * @param int $Product_ID  {@from body}
+         * @param date $Date  {@from body}
+         * @param string $Quantity  {@from body}
+         * @param string $Flag  {@from body}
      *
      * @return mixed
      */
-    function put($id, $Client_ID, $Sale_ID, $Customer_ID, $Register_Json, $Total)
+    function put($id, $Client_ID, $Commands_ID, $Sale_ID, $Product_ID, $Date, $Quantity, $Flag)
     {
-        $r = $this->dp->update($Client_ID, $id, compact('Client_ID', 'Sale_ID', 'Customer_ID', 'Register_Json', 'Total'));
+        $r = $this->dp->update($Client_ID, $id, compact('Client_ID', 'Commands_ID', 'Sale_ID', 'Product_ID', 'Date', 'Quantity', 'Flag'));
         if ($r === false)
             throw new RestException(404);
         return $r;
@@ -84,14 +101,16 @@ class History
      * @param int $id
      *
          * @param int $Client_ID  {@from body}
+         * @param int $Commands_ID  {@from body}
          * @param int $Sale_ID  {@from body}
-         * @param int $Customer_ID  {@from body}
-         * @param longtext $Register_Json  {@from body}
-         * @param string $Total  {@from body}
+         * @param int $Product_ID  {@from body}
+         * @param date $Date  {@from body}
+         * @param string $Quantity  {@from body}
+         * @param string $Flag  {@from body}
      *
      * @return mixed
      */
-    function patch($id, $Client_ID = null, $Sale_ID = null, $Customer_ID = null, $Register_Json = null, $Total = null)
+    function patch($id, $Client_ID = null, $Commands_ID = null, $Sale_ID = null, $Product_ID = null, $Date = null, $Quantity = null, $Flag = null)
     {
         $patch = $this->dp->get($Client_ID, $id);
         if ($patch === false)
@@ -104,26 +123,38 @@ class History
                     }
 
                 
+                    if (isset($Commands_ID)) {
+                        $patch['Commands_ID'] = $Commands_ID;
+                        $modified = true;
+                    }
+
+                
                     if (isset($Sale_ID)) {
                         $patch['Sale_ID'] = $Sale_ID;
                         $modified = true;
                     }
 
                 
-                    if (isset($Customer_ID)) {
-                        $patch['Customer_ID'] = $Customer_ID;
+                    if (isset($Product_ID)) {
+                        $patch['Product_ID'] = $Product_ID;
                         $modified = true;
                     }
 
                 
-                    if (isset($Register_Json)) {
-                        $patch['Register_Json'] = $Register_Json;
+                    if (isset($Date)) {
+                        $patch['Date'] = $Date;
                         $modified = true;
                     }
 
                 
-                    if (isset($Total)) {
-                        $patch['Total'] = $Total;
+                    if (isset($Quantity)) {
+                        $patch['Quantity'] = $Quantity;
+                        $modified = true;
+                    }
+
+                
+                    if (isset($Flag)) {
+                        $patch['Flag'] = $Flag;
                         $modified = true;
                     }
 

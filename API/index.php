@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 /*
 Title: Documentation
 Tagline: Commenting can be more rewarding
@@ -34,13 +35,15 @@ use Luracast\Restler\Restler;
 $r = new Restler();
 // comment the line above and uncomment the line below for production mode
 // $r = new Restler(true);
-$r->addAPIClass('improved\\Authors');
+$r->addAPIClass('generator\\Constructor');
+$r->addAPIClass('generator\\Generator');
+
 $r->addAPIClass('noob\\sycon\\Authentication');
 $r->addAPIClass('noob\\sycon\\Bill');
 $r->addAPIClass('noob\\sycon\\Cashier');
 $r->addAPIClass('noob\\sycon\\Category');
 $r->addAPIClass('noob\\sycon\\Client');
-$r->addAPIClass('noob\\sycon\\Command_Product');
+$r->addAPIClass('noob\\sycon\\CommandProduct');
 $r->addAPIClass('noob\\sycon\\Commands');
 $r->addAPIClass('noob\\sycon\\Customer');
 $r->addAPIClass('noob\\sycon\\History');
@@ -48,13 +51,12 @@ $r->addAPIClass('noob\\sycon\\Lot');
 $r->addAPIClass('noob\\sycon\\Measure');
 $r->addAPIClass('noob\\sycon\\Operator');
 $r->addAPIClass('noob\\sycon\\Payment');
-$r->addAPIClass('noob\\sycon\\Payment_Type');
+$r->addAPIClass('noob\\sycon\\PaymentType');
 $r->addAPIClass('noob\\sycon\\Product');
-$r->addAPIClass('noob\\sycon\\Product_Value');
+$r->addAPIClass('noob\\sycon\\ProductValue');
 $r->addAPIClass('noob\\sycon\\Provider');
 $r->addAPIClass('noob\\sycon\\Representative');
 $r->addAPIClass('noob\\sycon\\Sale');
-$r->addAPIClass('generator\\Constructor');
-$r->addAPIClass('generator\\Generator');
+
 $r->addAPIClass('Resources');
 $r->handle();

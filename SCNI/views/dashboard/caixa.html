@@ -1,0 +1,112 @@
+<div> 
+    <!--<h1 ui-sref="caixa">
+                   <i class="glyphicon glyphicon-shopping-cart" ></i>
+                   Caixa
+                </h1>
+                -->
+	<!--a ui-sref=reports class="pull-right btn btn-warning btn-outline btn-rounded">
+		Reports
+	</a-->
+    <h2 class="syconHello">
+    	Caixa
+    	<!--br>
+    	<small>Why is Ani Theme so awesome?</small>
+    	-->
+    </h2>
+    <div class="jumbotron">
+        <div class="container">
+            <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                    <h3 class="modal-title">Im a modal!</h3>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li ng-repeat="item in items">
+                            <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                        </li>
+                    </ul>
+                    Selected: <b>{{ selected.item }}</b>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+                </div>
+            </script>
+
+            <form role="form" ng-submit="putIntoCommand()">
+                <div class="form-content">
+                    <div class=form-group>
+                        <input type="text" ng-keyup="pesquisarComanda(comanda)" ng-model="comanda" class="form-control input-outline input-lg input-code " placeholder="Comanda">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <input type="text" ng-model="qtd" class="form-control input-outline input-lg input-code" placeholder="Quantidade">
+                    </div>
+                    <div class=form-group>
+                        <input type="text" id="tags" ng-keyup="pesquisarName(search)" ng-model="search" class="form-control input-outline input-lg input-block" placeholder="Produto" autocomplete="off">
+
+                        <div class="autocomplete" ng-show="completing">
+                          <ul class="sycon-autocomplete">
+                              <li ng-repeat="dica in dicas" ng-click='pickItem(dica)'>
+                                {{dica.Name}}
+                              </li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="form-group sycon-group">
+                        <input type="text" ng-model="codprod" class="form-control input-outline input-code" placeholder="Cod. Produto"> 
+                        <span class="separated">  OU  </span>
+                        <input type="text" ng-model="codbar" class="form-control input-outline input-code" placeholder="CodBar. Produto"> 
+
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg btn-block text-ceter" >
+                        <h3 class="text-white">
+                            Adicionar Produto
+                        </h3>
+                    </button>
+                </div>
+            </form>
+
+           
+            <div class="sycon-painel"> 
+                <table class="table"> 
+                    <thead> 
+                        <tr> 
+                            <th>Cod</th>
+                            <th>Prod</th>
+                            <th>Quantidade</th>
+                            <th>Valor</th>
+                        </tr> 
+                    </thead> 
+                    <div class="sycon-scroll"> 
+                        <tbody> 
+                            <tr ng-repeat="commandRow in cammandTable"> 
+                                <th scope="row">{{commandRow.Cod}}</th> 
+                                <td>{{commandRow.Prod}}</td> 
+                                <td>{{commandRow.Qtd}}</td> 
+                                <td>{{commandRow.Val}}</td> 
+                            </tr> 
+                        </tbody>
+                    </div> 
+                </table>
+                
+            </div>
+          
+            <div class="panel panel-default sycon-painel-mini"> 
+               <table class="table sycon-btn-table"> 
+                    <tr> 
+                        <th class="Caixa-Btn-End" ng-click="checkout('sm')">FINALIZAR</th>
+                    </tr> 
+                    <tr>
+                        <th><hr></th>
+                    </tr>
+                    <tr> 
+                        <th class="Caixa-Btn-Clear text-danger">LIMPAR</th>
+                    </tr> 
+                </table>
+            </div>  
+
+        </div>
+    </div>
+</div>

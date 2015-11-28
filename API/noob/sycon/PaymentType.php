@@ -3,10 +3,10 @@ namespace noob\sycon;
 use Luracast\Restler\RestException;
 use DB_PDO_MySQL;
 
-class History
+class PaymentType
 {
     public $dp;
-    public $tbname = 'History';
+    public $tbname = 'Payment_Type';
     private $ClientD = 1;
 
     function __construct()
@@ -49,32 +49,26 @@ class History
      *
      *
          * @param int $Client_ID  {@from body}
-         * @param int $Sale_ID  {@from body}
-         * @param int $Customer_ID  {@from body}
-         * @param longtext $Register_Json  {@from body}
-         * @param string $Total  {@from body}             
+         * @param string $Name  {@from body}             
      *
      * @return mixed
      */
-    function post($Client_ID, $Sale_ID, $Customer_ID, $Register_Json, $Total)
+    function post($Client_ID, $Name)
     {
-        return $this->dp->insert($Client_ID, compact('Client_ID', 'Sale_ID', 'Customer_ID', 'Register_Json', 'Total'));
+        return $this->dp->insert($Client_ID, compact('Client_ID', 'Name'));
     }
 
     /**
      * @param int    $id
      *
          * @param int $Client_ID  {@from body}
-         * @param int $Sale_ID  {@from body}
-         * @param int $Customer_ID  {@from body}
-         * @param longtext $Register_Json  {@from body}
-         * @param string $Total  {@from body}
+         * @param string $Name  {@from body}
      *
      * @return mixed
      */
-    function put($id, $Client_ID, $Sale_ID, $Customer_ID, $Register_Json, $Total)
+    function put($id, $Client_ID, $Name)
     {
-        $r = $this->dp->update($Client_ID, $id, compact('Client_ID', 'Sale_ID', 'Customer_ID', 'Register_Json', 'Total'));
+        $r = $this->dp->update($Client_ID, $id, compact('Client_ID', 'Name'));
         if ($r === false)
             throw new RestException(404);
         return $r;
@@ -84,14 +78,11 @@ class History
      * @param int $id
      *
          * @param int $Client_ID  {@from body}
-         * @param int $Sale_ID  {@from body}
-         * @param int $Customer_ID  {@from body}
-         * @param longtext $Register_Json  {@from body}
-         * @param string $Total  {@from body}
+         * @param string $Name  {@from body}
      *
      * @return mixed
      */
-    function patch($id, $Client_ID = null, $Sale_ID = null, $Customer_ID = null, $Register_Json = null, $Total = null)
+    function patch($id, $Client_ID = null, $Name = null)
     {
         $patch = $this->dp->get($Client_ID, $id);
         if ($patch === false)
@@ -104,26 +95,8 @@ class History
                     }
 
                 
-                    if (isset($Sale_ID)) {
-                        $patch['Sale_ID'] = $Sale_ID;
-                        $modified = true;
-                    }
-
-                
-                    if (isset($Customer_ID)) {
-                        $patch['Customer_ID'] = $Customer_ID;
-                        $modified = true;
-                    }
-
-                
-                    if (isset($Register_Json)) {
-                        $patch['Register_Json'] = $Register_Json;
-                        $modified = true;
-                    }
-
-                
-                    if (isset($Total)) {
-                        $patch['Total'] = $Total;
+                    if (isset($Name)) {
+                        $patch['Name'] = $Name;
                         $modified = true;
                     }
 

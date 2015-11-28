@@ -105,13 +105,163 @@ h6{
     margin-top: 20px;
 }
 
+/***** OUTLINE FORM STYE ****/
+.input-outline{
+	border-color: #e74c3c;
+    box-shadow: 0 0 0 2px #e74c3c inset!important;
+    color: #e74c3c!important;
+    background-color: transparent;
+    font-size: 32px;
+    height: auto;
+}
 
+.input-code{
+	width: 47%;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.sycon-group{
+	text-align: center;
+}
+
+.separated{
+	font-size: 26px;
+    color: #e74c3c;
+}
+
+
+.text-white{
+	color: #FFFFFF!important;
+}
+
+.sycon-painel{
+	background-color: white;
+	color: grey;
+	display: inline-block;
+	width: 72%;
+	height: 300px;
+	vertical-align: top;
+}
+
+.sycon-painel-mini{
+	display: inline-block;
+	margin-left: 3%;
+	margin-bottom: 0px;
+	width: 24%;
+	height: 300px;
+	background-color: transparent;
+	border: 0px;
+}
+
+.sycon-scroll{
+	max-height: 262px;
+	overflow: auto;
+}
+
+.sycon-btn-table {
+    margin-top: 15%;
+}
+
+.sycon-btn-table tr th{
+	font-size: 300%;
+    text-align: center;
+    padding: 15% 0px;
+    vertical-align: middle;
+    border: 0px!important;
+}
+
+.sycon-btn-table tr th hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid transparent;
+}
+.Caixa-Btn-End{
+	background-color: #5CB85D;
+	color: white;
+	border: 0px;
+	cursor: pointer;
+}
+
+.Caixa-Btn-End:hover{
+	background-color: green;
+	color: white;
+	border: 0px;
+	cursor: pointer;
+}
+
+.Caixa-Btn-Clear{
+	background-color: #a94442;
+	color: white;
+	border: 0px;
+	cursor: pointer;
+}
+
+.Caixa-Btn-Clear:hover{
+	background-color:red;
+	color: white;
+	border: 0px;
+	cursor: pointer;
+}
+
+
+/**** AUTO COMPLETE *****/
+
+.autocomplete{
+	position: absolute;
+    z-index: 1000;
+    min-width: 50%;
+    padding: 0px;
+    margin: 2px 0 0 0;
+    background-color: transparent;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+ul.sycon-autocomplete {
+    padding: 0px;
+    margin: 0px;;
+}
+
+li.ng-binding.ng-scope {
+    padding: 16px 10px;
+    border-bottom: 2px solid #d35400;
+    background-color: #ecf0f1;
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+li.ng-binding.ng-scope:hover {
+	background-color: #e74c3c;
+	color: #ffffff;
+}
+
+li.ng-binding.ng-scope:last-child {
+    border-bottom: 0px solid;
+}
+
+.sycon-autocomplete{
+	list-style: none;
+}
 
 /***** csss premium de STYLE *********/
 
 .syconHello {
 color: #fff;
-font-size: 7em;
+font-size: 50px;
 font-weight: bold;
 font-family: Helvetica;
 text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
