@@ -8,9 +8,9 @@
 
 	<meta name="description" content="SyCON - Um ERP |DIFERENTE| - ">
 
-	<meta name="keywords" content="Startup HTML template, Bootstrap Agency theme, html template, charity template, premium html template, one page template">
+	<meta name="keywords" content="ERP Startup, Sistema de Gestão empresárial, ERP, Baixo Custo, Solução para comércios, Nota Fiscal e-Sat, e-NF">
 
-	<meta name="author" content="GrayGrids">
+	<meta name="author" content="Marcus Gomes">
 
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -83,7 +83,7 @@
 							<li><a href="#about">Sobre</a></li>										
 							<!--li><a href="#portfolio">Portfolio</a></li-->
 							<li><a href="#why-chose">Escolha</a></li>							
-							<li><a href="#testimonial">Sucesso</a></li>							
+							<!--li><a href="#testimonial">Sucesso</a></li-->				
 							<!--li><a href="#pricing">Pricing</a></li>
 							<li><a href="#blog">Blog</a></li>
 							<li><a href="#team">Team</a></li-->
@@ -798,7 +798,7 @@
 		<!- - End Team Section -->
 		
 		<!-- Start Testimonial Section -->
-		<section id="testimonial">
+		<!--section id="testimonial">
 			<div class="container">
 				<div class="row">
 					<h2 class="section-title wow fadeIn" data-wow-delay=".2s">Nosso Sucesso</h2>					
@@ -886,7 +886,7 @@
 									<span class="company">CEO - Media Wiki</span></p>
 								</div>
 							</div>
-						</div-->
+						</div- - >
 
 					</div>
 				</div>
