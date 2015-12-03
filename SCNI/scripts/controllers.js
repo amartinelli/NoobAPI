@@ -97,12 +97,14 @@ angular.module('yapp')
   };
 
   s.ok = function () {
+    alert('PEgaaa Entao Malandro');
     umi.close(s.selected.item);
   };
 
   s.cancel = function () {
     umi.dismiss('cancel');
   };
+
 }])
 
 .controller("CaixaCtrl", ["$scope", "$http", "$cookieStore", "$location", "$uibModal", "globalservice", function(s, h, cks, l, um, gs){
@@ -119,21 +121,24 @@ angular.module('yapp')
 			s.completing = false;
 
 		}else{
-
+			s.cammandTable = [];
 			// Pesquisa no banco via AJAX
-			h.get('/API/commandproduct/Command.json/' + gs.getClientID() + '/'+comanda).
+			h.get('/API/commandproduct/All.json/' + gs.getClientID() + '/'+comanda).
 	        success(function(data) {
 	        	if(Object.keys(data).length){
 		        	angular.forEach(data, function(row) {
+		        		console.log(row);
 					  	s.cammandTable.push({	
 							Cod: row.Product_ID, 
 							Prod: row.Name,
 							Qtd: row.Quantity,
-							Val: row.Price
+							Val: row.Price,
+							Command_Product_ID: row.Command_Product_ID
 						});
 					});
 	        	}else{
 	        		s.cammandTable = [];
+
 	        	}
 	        	//s.cammandTable = data;
 				
@@ -229,6 +234,22 @@ angular.module('yapp')
 		
 	}
 
+	s.delete = function(ido, idx){
+		h({ url: '/API/commandproduct.json/' + gs.getClientID() + '/'+ido, 
+                method: 'DELETE', 
+                headers: {"Content-Type": "application/json;charset=utf-8"}
+        }).then(function(res) {
+            s.cammandTable.splice(idx, 1);
+        }, function(error) {
+            console.log(error);
+        });
+	}
+
+	s.clear = function(){
+		s.comanda = '';
+		s.cammandTable = [];
+	}
+
 	s.items = ['item1', 'item2', 'item3'];
 
 	s.animationsEnabled = true;
@@ -258,6 +279,7 @@ angular.module('yapp')
 	s.toggleAnimation = function () {
 		    s.animationsEnabled = !s.animationsEnabled;
 		  };
+
 }])
 
 .controller("DashboardCtrl", ["$scope", "$state", function(s, t) {

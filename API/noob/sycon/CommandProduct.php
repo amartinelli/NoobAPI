@@ -38,12 +38,12 @@ class CommandProduct
      */
     function get($ClientID, $id)
     {
-        return $this->dp->getAllCommandProducts($ClientID, $id);
+        return $this->dp->getAll($ClientID, $id);
     }
 
     /**
      *
-     * @url GET /Command/{ClientID}/{id}
+     * @url GET /All/{ClientID}/{id}
      *
      * @param int ClientID
      * @param int id
@@ -52,7 +52,7 @@ class CommandProduct
      */
     function commandData($ClientID, $id)
     {
-        return $this->dp->getCommandData($ClientID, $id);
+        return $this->dp->getAllCommandProducts($ClientID, $id);
     }
 
     
