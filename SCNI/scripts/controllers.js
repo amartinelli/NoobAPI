@@ -190,7 +190,7 @@ angular.module('yapp')
 
 	s.putIntoCommand = function() {
 
-		h.get('/API/commands.json/' + gs.getClientID() + '/'+s.comanda)
+		h.get('/API/commands/getByRef.json/' + gs.getClientID() + '/'+s.comanda)
 			.success(function(data) {
 				s.command = data;
 	        })

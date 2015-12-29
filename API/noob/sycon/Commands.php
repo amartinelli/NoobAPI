@@ -45,6 +45,23 @@ class Commands
     }
 
     /**
+     *
+     * @url GET /getByRef/{ClientID}/{ref}
+     *
+     * @param int ClientID
+     * @param int ref
+     *
+     * @return array
+     */
+    function getByRef($ClientID, $ref)
+    {
+        $r = $this->dp->getByRef($ClientID, $ref);
+        if ($r === false)
+            throw new RestException(404);
+        return $r;
+    }
+
+    /**
      * @status 201
      *
      *

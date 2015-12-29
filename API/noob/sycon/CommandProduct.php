@@ -43,16 +43,18 @@ class CommandProduct
 
     /**
      *
-     * @url GET /All/{ClientID}/{id}
+     * @url GET /All/{ClientID}/{ref}
      *
      * @param int ClientID
-     * @param int id
+     * @param int ref
      *
      * @return array
      */
-    function commandData($ClientID, $id)
+    function commandData($ClientID, $ref)
     {
-        return $this->dp->getAllCommandProducts($ClientID, $id);
+        $commands = new Commands();
+        $CommandData = $commands->getByRef($ClientID, $ref);
+        return $this->dp->getAllCommandProducts($ClientID, $CommandData['Commands_ID']);
     }
 
     
