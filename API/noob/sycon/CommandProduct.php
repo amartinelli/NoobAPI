@@ -56,20 +56,18 @@ class CommandProduct
         $CommandData = $commands->getByRef($ClientID, $ref);
         return $this->dp->getAllCommandProducts($ClientID, $CommandData['Commands_ID']);
     }
-
     
-
     /**
      * @status 201
      *
      *
-         * @param int $Client_ID  {@from body}
-         * @param int $Commands_ID  {@from body}
-         * @param int $Sale_ID  {@from body}
-         * @param int $Product_ID  {@from body}
-         * @param date $Date  {@from body}
-         * @param string $Quantity  {@from body}
-         * @param string $Flag  {@from body}             
+     * @param int $Client_ID  {@from body}
+     * @param int $Commands_ID  {@from body}
+     * @param int $Sale_ID  {@from body}
+     * @param int $Product_ID  {@from body}
+     * @param date $Date  {@from body}
+     * @param string $Quantity  {@from body}
+     * @param string $Flag  {@from body}             
      *
      * @return mixed
      */
@@ -102,13 +100,13 @@ class CommandProduct
     /**
      * @param int $id
      *
-         * @param int $Client_ID  {@from body}
-         * @param int $Commands_ID  {@from body}
-         * @param int $Sale_ID  {@from body}
-         * @param int $Product_ID  {@from body}
-         * @param date $Date  {@from body}
-         * @param string $Quantity  {@from body}
-         * @param string $Flag  {@from body}
+     * @param int $Client_ID  {@from body}
+     * @param int $Commands_ID  {@from body}
+     * @param int $Sale_ID  {@from body}
+     * @param int $Product_ID  {@from body}
+     * @param date $Date  {@from body}
+     * @param string $Quantity  {@from body}
+     * @param string $Flag  {@from body}
      *
      * @return mixed
      */

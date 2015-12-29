@@ -97,7 +97,7 @@ angular.module('yapp')
   };
 
   s.ok = function () {
-    alert('PEgaaa Entao Malandro');
+    alert('Venda efetuada com sucesso, no metodo: '+s.selected.item);
     umi.close(s.selected.item);
   };
 
@@ -250,7 +250,7 @@ angular.module('yapp')
 		s.cammandTable = [];
 	}
 
-	s.items = ['item1', 'item2', 'item3'];
+	s.items = ['Cartão', 'Dinheiro', 'Conta'];
 
 	s.animationsEnabled = true;
 
