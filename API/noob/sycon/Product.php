@@ -31,8 +31,8 @@ class Product
      *
      * @url GET /{ClientID}/{id}
      *
-     * @param int ClientID
      * @param int id
+     * @param int ClientID
      *
      * @return array
      */
