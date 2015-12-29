@@ -83,10 +83,10 @@
                     <div class="sycon-scroll"> 
                         <tbody> 
                             <tr ng-repeat="commandRow in cammandTable"> 
-                                <th scope="row">{{commandRow.Cod}}</th> 
+                                <th scope="row" myId="{{commandRow.Command_Product_ID}}">{{commandRow.Cod}}</th> 
                                 <td>{{commandRow.Prod}}</td> 
                                 <td>{{commandRow.Qtd}}</td> 
-                                <td>{{commandRow.Val}}</td>
+                                <td>{{commandRow.Val}} </td>
                                 <td><i class="glyphicon glyphicon-remove text-danger" ng-click="delete(commandRow.Command_Product_ID,$index)"></i></td> 
                             </tr> 
                         </tbody>

@@ -209,7 +209,7 @@ angular.module('yapp')
 						// Se deu algum erro, mostro no log do console
 						console.log("Ocorreu um erro no banco de dados ao trazer auto-ajuda da home");
 			        }).then(function(){	
-			    	    //console.log(s.productCommand.Name);
+			    	    console.log(s.productCommand);
 			    	    s.cammandTable.push({	
 							Cod: s.productCommand.Product_ID, 
 							Prod: s.productCommand.Name,
