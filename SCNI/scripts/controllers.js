@@ -214,7 +214,7 @@ angular.module('yapp')
 							Cod: s.productCommand.Product_ID, 
 							Prod: s.productCommand.Name,
 							Qtd: s.qtd,
-							Val: s.productCommand.Quantity
+							Val: s.productCommand.Price
 						});
 			    	    gs.registerCommand(gs.getClientID(), s.command, s.productCommand, s.qtd);
 					});
@@ -225,7 +225,7 @@ angular.module('yapp')
 						Cod: s.productCommand.Product_ID, 
 						Prod: s.productCommand.Name,
 						Qtd: s.qtd,
-						Val: s.productCommand.Quantity
+						Val: s.productCommand.Price
 					});
 					gs.registerCommand(gs.getClientID(), s.command, s.productCommand, s.qtd);
 				}
